@@ -8,6 +8,7 @@ import { GoogleGenAI, Modality } from '@google/genai'
 const app = express()
 app.use(express.json())
 app.use(express.static('public'))
+app.get('/', (req, res) => res.redirect('/index.html'))
 
 const db = new pg.Pool({
   connectionString: process.env.DATABASE_URL,

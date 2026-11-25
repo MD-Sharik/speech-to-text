@@ -1,0 +1,172 @@
+body {
+  font-family: system-ui, Arial, sans-serif;
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 12px;
+  background: #f4f5f7;
+  color: #222;
+}
+
+h1 {
+  margin-bottom: 4px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.sub {
+  margin-top: 0;
+  color: #666;
+}
+
+.box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+button {
+  padding: 6px 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #f0f0f0;
+}
+
+button.primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+button.primary:hover {
+  background: #1d4ed8;
+}
+
+button.danger {
+  color: #b91c1c;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+#status {
+  margin-left: 4px;
+  color: #555;
+}
+
+#status.error {
+  color: #b91c1c;
+}
+
+#status.live {
+  color: #15803d;
+}
+
+#status.live::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #dc2626;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0.2; }
+}
+
+#wordCount {
+  margin-left: auto;
+  color: #777;
+  font-size: 13px;
+}
+
+textarea,
+#search {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+textarea {
+  height: 140px;
+  margin: 12px 0;
+  padding: 8px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+#search {
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border-bottom: 1px solid #e5e5e5;
+  padding: 8px 6px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-size: 13px;
+  color: #666;
+}
+
+td.text {
+  min-width: 220px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+td.date {
+  font-size: 13px;
+  color: #666;
+}
+
+td.actions button {
+  margin: 0 4px 4px 0;
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+td.empty {
+  text-align: center;
+  color: #777;
+}
+
+td textarea {
+  height: 70px;
+  margin: 0;
+}

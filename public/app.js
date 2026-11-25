@@ -77,7 +77,7 @@ startBtn.onclick = async () => {
     ws = null
     stopMic()
     resetButtons()
-    if (!failed) setStatus('connection lost', 'error')
+    if (!failed) setStatus('connection lost, press Start to continue', 'error')
   }
 
   try {

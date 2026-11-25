@@ -40,10 +40,15 @@ Fill `GEMINI_API_KEY` (get one free from Google AI Studio) and `DATABASE_URL` in
 
 WebSocket: `/live` (binary PCM in, JSON transcription out)
 
-## Deploy (Render)
+## Deploy (Vercel + Neon)
 
-1. Create a free Postgres on Neon or Render, copy the connection string.
-2. New Web Service on Render from this repo. Build: `npm install`, Start: `npm start`.
-3. Env vars: `GEMINI_API_KEY`, `DATABASE_URL`, `DB_SSL=true`.
+1. Create a Postgres database on Neon and copy the pooled connection string (the host contains `-pooler`). Change `sslmode=require` to `sslmode=verify-full`.
+2. On Vercel, import this repo as a new project.
+3. Add env vars: `GEMINI_API_KEY`, `GEMINI_MODEL`, `DATABASE_URL`, `DB_SSL=true`.
+4. Deploy. The table is created automatically on start.
 
-Mic needs HTTPS, which Render gives by default.
+Notes:
+
+- Live transcription uses WebSockets, which are in public beta on Vercel and need Fluid compute (on by default for new projects).
+- A live session ends when the function reaches its max duration (300 seconds by default, which is also the Hobby plan limit). Press Start to continue.
+- The app has no login. Anyone with the URL can read, edit and delete transcripts and use your Gemini quota.
